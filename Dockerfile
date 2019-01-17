@@ -44,7 +44,7 @@ apt-get -y install google-chrome-stable
 
 # Install Selenium Chromedriver
 RUN apt-get -y install unzip &&\
-wget -q https://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip &&\
+wget -q https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip &&\
 unzip chromedriver_linux64.zip &&\
 mv chromedriver /usr/bin/chromedriver &&\
 chown root:root /usr/bin/chromedriver &&\
@@ -61,3 +61,6 @@ RUN pip install pytest allure-pytest pytest-html
 # Install load test dependencies
 RUN apt-get install -y  
 RUN pip install bzt
+
+# Install IMGQA repository from PYPI
+RUN pip install imgqa
